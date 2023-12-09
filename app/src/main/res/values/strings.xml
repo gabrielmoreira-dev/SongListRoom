@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">SongListRoom</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_song">Add song</string>
+    <string name="name">Name:</string>
+    <string name="artist">Artist:</string>
+    <string name="album">Album:</string>
+    <string name="image">Image:</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="song_added">Song added!</string>
 </resources>
