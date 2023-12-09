@@ -9,12 +9,17 @@ import br.edu.ifsp.songlistroom.databinding.SongCellBinding
 
 class SongAdapter(): RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
     private lateinit var binding: SongCellBinding
-    private var songList = ArrayList<Song>()
+    private var listener: SongListener? = null
+    var songList = ArrayList<Song>()
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateList(newList: ArrayList<Song>) {
         songList = newList
         notifyDataSetChanged()
+    }
+
+    fun setClickListener(listener: SongListener) {
+        this.listener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
@@ -34,5 +39,15 @@ class SongAdapter(): RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
     inner class SongViewHolder(view: SongCellBinding): RecyclerView.ViewHolder(view.root) {
         val name = view.nameTv
         val artist = view.artistTv
+
+        init {
+            view.root.setOnClickListener {
+                listener?.onItemClicked(adapterPosition)
+            }
+        }
+    }
+
+    interface SongListener {
+        fun onItemClicked(pos: Int)
     }
 }

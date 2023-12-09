@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 class SongViewModel(application: Application): AndroidViewModel(application) {
     private val repository: SongRepository
     var songList: LiveData<List<Song>>
+    lateinit var song: LiveData<Song>
 
     init {
         repository = SongRepository(SongDatabase.getDatabase(application).songDAO())
@@ -21,5 +22,9 @@ class SongViewModel(application: Application): AndroidViewModel(application) {
 
     fun insert(song: Song) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(song)
+    }
+
+    fun getContactById(id: Int) = viewModelScope.launch {
+        song = repository.getSongById(id)
     }
 }

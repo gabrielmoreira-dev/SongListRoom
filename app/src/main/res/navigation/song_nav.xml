@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_songListFragment_to_addSongFragment"
             app:destination="@id/addSongFragment" />
+        <action
+            android:id="@+id/action_songListFragment_to_songDetailFragment"
+            app:destination="@id/songDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/addSongFragment"
         android:name="br.edu.ifsp.songlistroom.ui.AddSongFragment"
         android:label="fragment_add_song"
         tools:layout="@layout/fragment_add_song" />
+    <fragment
+        android:id="@+id/songDetailFragment"
+        android:name="br.edu.ifsp.songlistroom.ui.SongDetailFragment"
+        android:label="fragment_song_detail"
+        tools:layout="@layout/fragment_song_detail" />
 </navigation>

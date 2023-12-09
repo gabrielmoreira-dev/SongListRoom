@@ -7,4 +7,6 @@ class SongRepository(private val songDAO: SongDAO) {
     suspend fun insert(song: Song) = songDAO.insert(song)
 
     fun getAllSongs() = songDAO.getAllSongs()
+
+    fun getSongById(id: Int) = songDAO.getSongById(id)
 }

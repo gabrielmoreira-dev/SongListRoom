@@ -16,7 +16,7 @@ import br.edu.ifsp.songlistroom.viewmodel.SongViewModel
 
 class SongListFragment : Fragment() {
     private lateinit var binding: FragmentSongListBinding
-    private lateinit var  viewModel: SongViewModel
+    private lateinit var viewModel: SongViewModel
     private lateinit var songAdapter: SongAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,5 +46,15 @@ class SongListFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = songAdapter
         }
+        setOnItemClickedListener()
+    }
+
+    private fun setOnItemClickedListener() = object : SongAdapter.SongListener {
+        override fun onItemClicked(pos: Int) = Bundle().let {
+            it.putInt("songId", songAdapter.songList[pos].id)
+            findNavController().navigate(R.id.action_songListFragment_to_songDetailFragment, it)
+        }
+    }.let {
+        songAdapter.setClickListener(it)
     }
 }

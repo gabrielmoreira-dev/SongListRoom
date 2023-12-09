@@ -12,4 +12,7 @@ interface SongDAO {
 
     @Query("SELECT * FROM song ORDER BY name")
     fun getAllSongs(): LiveData<List<Song>>
+
+    @Query("SELECT * FROM song WHERE id=:id")
+    fun getSongById(id: Int): LiveData<Song>
 }
