@@ -23,8 +23,8 @@ Foi implementado um CRUD de lista de músicas, utilizando a biblioteca Room para
 ## Arquitetura
 Foi adotada uma arquitetura MVVM com Repository, empregando LiveData e a biblioteca Room para persistência de dados. 
 
-<img src="https://github.com/gabrielmoreira-dev/SongListRoom/assets/52149023/1ecc28c0-b46c-4688-817d-57b5a7745623" height="400" />
-<img src="https://github.com/gabrielmoreira-dev/SongListRoom/assets/52149023/d8489737-3f5c-4b6a-af0d-37d9ba0f0ab3" height="400" />
+<img src="https://github.com/gabrielmoreira-dev/SongListRoom/assets/52149023/1ecc28c0-b46c-4688-817d-57b5a7745623" height="300" />
+<img src="https://github.com/gabrielmoreira-dev/SongListRoom/assets/52149023/d8489737-3f5c-4b6a-af0d-37d9ba0f0ab3" height="300" />
 
 ## Dados para teste
 Para testar as funcionalidades do aplicativo podem ser usados os seguintes dados:
