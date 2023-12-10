@@ -15,4 +15,5 @@
     <string name="song_updated">Song updated!</string>
     <string name="song_deleted">Song deleted!</string>
     <string name="search">Search</string>
+    <string name="favorite">Favorite:</string>
 </resources>

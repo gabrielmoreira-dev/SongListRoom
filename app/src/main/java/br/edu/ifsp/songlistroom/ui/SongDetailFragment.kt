@@ -61,6 +61,7 @@ class SongDetailFragment : Fragment() {
         artistEt.setText(song.artist)
         albumEt.setText(song.album)
         imageEt.setText(song.image)
+        favoriteCb.isChecked = song.isFavorite
     }
 
     private fun configureMenu() {
@@ -91,6 +92,7 @@ class SongDetailFragment : Fragment() {
             artistEt.isEnabled = isEditMode
             albumEt.isEnabled = isEditMode
             imageEt.isEnabled = isEditMode
+            favoriteCb.isEnabled = isEditMode
         }
     }
 
@@ -118,7 +120,7 @@ class SongDetailFragment : Fragment() {
             artist = it.artistEt.text.toString(),
             album = it.albumEt.text.toString(),
             image = it.imageEt.text.toString(),
-            isFavorite = false
+            isFavorite = it.favoriteCb.isChecked
         )
     }
 }

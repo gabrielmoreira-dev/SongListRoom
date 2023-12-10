@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -28,9 +29,14 @@ class AddSongFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentAddSongBinding.inflate(inflater, container, false)
+        validateButtonIsEnabled()
         binding.apply {
             songLt.saveBt.setOnClickListener { saveSong() }
             songLt.cancelBt.setOnClickListener { cancel() }
+            songLt.nameEt.addTextChangedListener { validateButtonIsEnabled() }
+            songLt.artistEt.addTextChangedListener { validateButtonIsEnabled() }
+            songLt.albumEt.addTextChangedListener { validateButtonIsEnabled() }
+            songLt.imageEt.addTextChangedListener { validateButtonIsEnabled() }
             return root
         }
     }
@@ -43,7 +49,7 @@ class AddSongFragment : Fragment() {
                 artist = artistEt.text.toString(),
                 album = albumEt.text.toString(),
                 image = imageEt.text.toString(),
-                isFavorite = false
+                isFavorite = favoriteCb.isChecked
             )
             viewModel.insert(song)
         }
@@ -53,5 +59,14 @@ class AddSongFragment : Fragment() {
 
     private fun cancel() {
         findNavController().popBackStack()
+    }
+
+    private fun validateButtonIsEnabled() {
+        binding.songLt.apply {
+            saveBt.isEnabled = nameEt.text.isNotEmpty() &&
+                    artistEt.text.isNotEmpty() &&
+                    albumEt.text.isNotEmpty() &&
+                    imageEt.text.isNotEmpty()
+        }
     }
 }

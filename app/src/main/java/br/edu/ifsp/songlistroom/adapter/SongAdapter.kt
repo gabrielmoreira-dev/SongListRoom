@@ -8,6 +8,7 @@ import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ifsp.songlistroom.data.Song
 import br.edu.ifsp.songlistroom.databinding.SongCellBinding
+import com.bumptech.glide.Glide
 
 class SongAdapter(): RecyclerView.Adapter<SongAdapter.SongViewHolder>(), Filterable {
     private lateinit var binding: SongCellBinding
@@ -35,6 +36,7 @@ class SongAdapter(): RecyclerView.Adapter<SongAdapter.SongViewHolder>(), Filtera
         songListFiltered[position].let {
             holder.name.text = it.name
             holder.artist.text = it.artist
+            Glide.with(holder.itemView).load(it.image).into(holder.logo)
         }
     }
 
@@ -63,6 +65,7 @@ class SongAdapter(): RecyclerView.Adapter<SongAdapter.SongViewHolder>(), Filtera
     inner class SongViewHolder(view: SongCellBinding): RecyclerView.ViewHolder(view.root) {
         val name = view.nameTv
         val artist = view.artistTv
+        val logo = view.logoIv
 
         init {
             view.root.setOnClickListener {
