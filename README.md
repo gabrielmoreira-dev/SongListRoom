@@ -4,6 +4,9 @@ Projeto final da disciplina de Persistência de Dados (PDD) do curso de Pós-Gra
 ## Descrição
 Foi implementado um CRUD de lista de músicas, utilizando a biblioteca Room para persistência dos dados
 
+<img src="https://github.com/gabrielmoreira-dev/SongListRoom/assets/52149023/4f34bf7f-861d-4a40-a913-fdc3288f4ca8" height="500"/>
+<img src="https://github.com/gabrielmoreira-dev/SongListRoom/assets/52149023/0d6244fa-a8f5-419c-afe1-444c7d097bfa" height="500"/>
+
 ## User Stories
 #1 - Incluir músicas na lista
 
@@ -17,13 +20,11 @@ Foi implementado um CRUD de lista de músicas, utilizando a biblioteca Room para
 
 #6 - Filtrar músicas pelo nome
 
-## Telas
-
 ## Arquitetura
 Foi adotada uma arquitetura MVVM com Repository, empregando LiveData e a biblioteca Room para persistência de dados. 
 
-<img src="https://github.com/gabrielmoreira-dev/SongListRoom/assets/52149023/1ecc28c0-b46c-4688-817d-57b5a7745623" height="350" />
-<img src="https://github.com/gabrielmoreira-dev/SongListRoom/assets/52149023/d8489737-3f5c-4b6a-af0d-37d9ba0f0ab3" height="350" />
+<img src="https://github.com/gabrielmoreira-dev/SongListRoom/assets/52149023/1ecc28c0-b46c-4688-817d-57b5a7745623" height="400" />
+<img src="https://github.com/gabrielmoreira-dev/SongListRoom/assets/52149023/d8489737-3f5c-4b6a-af0d-37d9ba0f0ab3" height="400" />
 
 ## Dados para teste
 Para testar as funcionalidades do aplicativo podem ser usados os seguintes dados:
