@@ -29,8 +29,8 @@ class AddSongFragment : Fragment() {
     ): View {
         binding = FragmentAddSongBinding.inflate(inflater, container, false)
         binding.apply {
-            saveBt.setOnClickListener { saveSong() }
-            cancelBt.setOnClickListener { cancel() }
+            songLt.saveBt.setOnClickListener { saveSong() }
+            songLt.cancelBt.setOnClickListener { cancel() }
             return root
         }
     }

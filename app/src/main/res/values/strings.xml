@@ -10,4 +10,8 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="song_added">Song added!</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="song_updated">Song updated!</string>
+    <string name="song_deleted">Song deleted!</string>
 </resources>

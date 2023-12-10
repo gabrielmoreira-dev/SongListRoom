@@ -4,23 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="20dp"
     tools:context=".ui.AddSongFragment">
 
     <include layout="@layout/song_layout"
         android:id="@+id/songLt" />
-
-    <Button
-        android:id="@+id/saveBt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/save" />
-
-    <Button
-        android:id="@+id/cancelBt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/cancel" />
 
 </LinearLayout>

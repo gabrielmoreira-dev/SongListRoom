@@ -24,6 +24,14 @@ class SongViewModel(application: Application): AndroidViewModel(application) {
         repository.insert(song)
     }
 
+    fun update(song: Song) = viewModelScope.launch(Dispatchers.IO) {
+        repository.update(song)
+    }
+
+    fun delete(song: Song) = viewModelScope.launch(Dispatchers.IO) {
+        repository.delete(song)
+    }
+
     fun getContactById(id: Int) = viewModelScope.launch {
         song = repository.getSongById(id)
     }
